@@ -1,0 +1,36 @@
+schema:
+  - todo.graphql
+  - ent.graphql
+
+exec:
+  layout: follow-schema
+  dir: graph/generated
+  package: generated
+
+model:
+  filename: graph/model/models_gen.go
+  package: model
+
+resolver:
+  layout: follow-schema
+  dir: graph
+  package: graph
+
+autobind:
+  - "github.com/shuymn-sandbox/go-gqlgen-and-ent/ent"
+
+models:
+  ID:
+    model:
+      - github.com/99designs/gqlgen/graphql.ID
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+  Int:
+    model:
+      - github.com/99designs/gqlgen/graphql.Int
+      - github.com/99designs/gqlgen/graphql.Int64
+      - github.com/99designs/gqlgen/graphql.Int32
+  Node:
+    model:
+      - github.com/shuymn-sandbox/go-gqlgen-and-ent/ent.Noder
